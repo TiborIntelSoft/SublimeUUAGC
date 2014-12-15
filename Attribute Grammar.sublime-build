@@ -1,0 +1,17 @@
+{
+	"cmd": ["uuagc", "-fscdwH", "$file_name"],
+	"selector": "source.ag",
+	"path": "/home/tibor/.cabal/bin",
+
+	"variants": [
+		{ "cmd": ["uuagc" , "-fscwH", "$file_name"],
+		  "name": "Attribute Grammar Semantics"
+		  },
+		{ "cmd": ["uuagc" , "-dH", "$file_name"],
+		  "name": "Attribute Grammar Datatypes"
+		  },
+		{ "cmd": ["uuagc" , "-aH", "$file_name"],
+		  "name": "Run"
+		  }
+		]
+}
