@@ -114,7 +114,7 @@
 		<dict>
 			<key>match</key>
 			<!-- Add both constants for lower case syntax and old style syntax -->
-			<string>\b(module|imports|ext|inh|chn|syn|include|deriving|data|attr|sem|wrapper|use|type|set|DERIVING|DATA|ATTR|SEM|WRAPPER|USE|TYPE|SET)\b</string>
+			<string>\b(module|imports|ext|inh|chn|syn|include|deriving|data|attr|sem|wrapper|use|type|set|self|DERIVING|DATA|ATTR|SEM|WRAPPER|USE|TYPE|SET|SELF)\b</string>
 			<key>name</key>
 			<string>keyword.basic.ag</string>
 		</dict>
