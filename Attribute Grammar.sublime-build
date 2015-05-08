@@ -1,7 +1,6 @@
 {
 	"cmd": ["uuagc", "-fscdwH", "$file_name"],
 	"selector": "source.ag",
-	"path": "/home/tibor/.cabal/bin",
 
 	"variants": [
 		{ "cmd": ["uuagc" , "-fscwH", "$file_name"],
