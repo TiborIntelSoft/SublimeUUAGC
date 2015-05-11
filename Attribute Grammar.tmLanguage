@@ -148,7 +148,7 @@
 		<key>parameters</key>
 		<dict>
 			<key>match</key>
-			<string>(@)([a-z][a-zA-Z0-9_]*)[ ]*((\.)[ ]*([a-z][a-zA-Z0-9_]*))?|([a-z][a-zA-Z0-9_]*)[ ]*(\.)[ ]*([a-z][a-zA-Z0-9_]*)</string>
+			<string>(@)([a-z][a-zA-Z0-9_]*)[ ]*((\.)[ ]*([a-z][a-zA-Z0-9_]*))?|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*([a-z][a-zA-Z0-9_]*)|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*\(([a-z][a-zA-Z0-9_]*)[ ]*,[ ]*([a-z][a-zA-Z0-9_]*)\)</string>
 			<key>name</key>
 			<string>meta.variable.parameter.ag</string>
 			<key>captures</key>
@@ -188,12 +188,27 @@
 					<key>name</key>
 					<string>entity.other.attribute-name.ag</string>
 				</dict>
+				<key>9</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.ag</string>
+				</dict>
+				<key>11</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.ag</string>
+				</dict>
+				<key>12</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.ag</string>
+				</dict>
 			</dict>
 		</dict>
 		<key>functions</key>
 		<dict>
 			<key>match</key>
-			<string>([a-z][a-zA-Z0-9_]*'?)(?=[\s])</string>
+			<string>([a-z][a-zA-Z0-9_]*'?)(?=[\s)])</string>
 			<key>name</key>
 			<string>support.function.embedded.haskell.ag</string>
 		</dict>
@@ -207,9 +222,9 @@
 		<key>infixfunctions</key>
 		<dict>
 			<key>match</key>
-			<string>(`[a-z][a-zA-Z0-9_]*'?`)(?=[\s])</string>
+			<string>(`[a-z][a-zA-Z0-9_]*'?`)(?=[\s)])</string>
 			<key>name</key>
-			<string>support.function.embedded.haskell.ag</string>
+			<string>keyword.operator.ag</string>
 		</dict>
 		<key>dataclasses</key>
 		<dict>
