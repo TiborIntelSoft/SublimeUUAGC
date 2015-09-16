@@ -152,7 +152,7 @@
 		<key>parameters</key>
 		<dict>
 			<key>match</key>
-			<string>(@)([a-z][a-zA-Z0-9_]*)[ ]*((\.)[ ]*([a-z][a-zA-Z0-9_]*))|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*([a-z][a-zA-Z0-9_]*)|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*\(([a-z][a-zA-Z0-9_]*)[ ]*,[ ]*([a-z][a-zA-Z0-9_]*)\)</string>
+			<string>(@)([a-z][a-zA-Z0-9_]*)[ ]*(\.)[ ]*([a-z][a-zA-Z0-9_]*)|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*([a-z][a-zA-Z0-9_]*)|(@)?([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*\([ ]*([a-z][a-zA-Z0-9_]*)([ ]*,[ ]*([a-z][a-zA-Z0-9_]*))*[ ]*\)</string>
 			<key>name</key>
 			<string>meta.variable.parameter.ag</string>
 			<key>captures</key>
@@ -167,42 +167,52 @@
 					<key>name</key>
 					<string>variable.parameter.ag</string>
 				</dict>
-				<key>4</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>meta.separator.attribute.ag</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.ag</string>
 				</dict>
 				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>entity.other.attribute-name.ag</string>
+					<string>variable.parameter.ag</string>
 				</dict>
 				<key>6</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.ag</string>
+					<string>meta.separator.attribute.ag</string>
 				</dict>
 				<key>7</key>
 				<dict>
 					<key>name</key>
-					<string>meta.separator.attribute.ag</string>
+					<string>entity.other.attribute-name.ag</string>
 				</dict>
 				<key>8</key>
 				<dict>
 					<key>name</key>
-					<string>entity.other.attribute-name.ag</string>
+					<string>keyword.operator.ag</string>
 				</dict>
 				<key>9</key>
 				<dict>
 					<key>name</key>
 					<string>variable.parameter.ag</string>
 				</dict>
+				<key>10</key>
+				<dict>
+					<key>name</key>
+					<string>meta.separator.attribute.ag</string>
+				</dict>
 				<key>11</key>
 				<dict>
 					<key>name</key>
 					<string>entity.other.attribute-name.ag</string>
 				</dict>
-				<key>12</key>
+				<key>13</key>
 				<dict>
 					<key>name</key>
 					<string>entity.other.attribute-name.ag</string>
