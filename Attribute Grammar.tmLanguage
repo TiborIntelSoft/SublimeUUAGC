@@ -52,6 +52,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#fields</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#functions</string>
 		</dict>
 		<dict>
@@ -118,7 +122,7 @@
 		<dict>
 			<key>match</key>
 			<!-- Add both constants for lower case syntax and old style syntax -->
-			<string>\b(module|imports|ext|inh|chn|syn|include|deriving|data|attr|sem|wrapper|use|type|set|self|maybe|DERIVING|DATA|ATTR|SEM|WRAPPER|USE|TYPE|SET|SELF|MAYBE)\b</string>
+			<string>\b(module|imports|ext|inh|chn|syn|include|deriving|data|attr|sem|wrapper|use|type|set|self|maybe|DERIVING|DATA|ATTR|SEM|WRAPPER|USE|TYPE|SET|SELF|MAYBE)\b(?=[\s)])</string>
 			<key>name</key>
 			<string>keyword.basic.ag</string>
 		</dict>
@@ -148,7 +152,7 @@
 		<key>parameters</key>
 		<dict>
 			<key>match</key>
-			<string>(@)([a-z][a-zA-Z0-9_]*)[ ]*((\.)[ ]*([a-z][a-zA-Z0-9_]*))?|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*([a-z][a-zA-Z0-9_]*)|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*\(([a-z][a-zA-Z0-9_]*)[ ]*,[ ]*([a-z][a-zA-Z0-9_]*)\)</string>
+			<string>(@)([a-z][a-zA-Z0-9_]*)[ ]*((\.)[ ]*([a-z][a-zA-Z0-9_]*))|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*([a-z][a-zA-Z0-9_]*)|([a-z][a-zA-Z0-9_]*)?[ ]*(\.)[ ]*\(([a-z][a-zA-Z0-9_]*)[ ]*,[ ]*([a-z][a-zA-Z0-9_]*)\)</string>
 			<key>name</key>
 			<string>meta.variable.parameter.ag</string>
 			<key>captures</key>
@@ -199,6 +203,26 @@
 					<string>entity.other.attribute-name.ag</string>
 				</dict>
 				<key>12</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.ag</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>fields</key>
+		<dict>
+			<key>match</key>
+			<string>(@)([a-z][a-zA-Z0-9_]*)</string>
+			<key>name</key>
+			<string>meta.variable.parameter.ag</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.ag</string>
+				</dict>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>entity.other.attribute-name.ag</string>
