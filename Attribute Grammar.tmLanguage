@@ -26,13 +26,17 @@
 			<key>include</key>
 			<string>#stringValue</string>
 		</dict>
-	<!-- 	<dict>
-			<key>include</key>
-			<string>#oldParaDecl</string>
-		</dict> -->
 		<dict>
 			<key>include</key>
 			<string>#paraDecl</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#agLowerCaseTypes</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#parameters</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -45,10 +49,6 @@
 		<dict>
 			<key>include</key>
 			<string>#dataclasses</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#parameters</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -118,11 +118,37 @@
 				</dict>
 			</array>
 		</dict>
+		<key>agLowerCaseTypes</key>
+		<dict>
+			<key>match</key>
+			<!-- Add both constants for lower case syntax and old style syntax -->
+			<string>(TYPE|type) ([A-Z][a-zA-Z0-9]*[']*) = (MAP|MAYBE|map|maybe)</string>
+			<key>name</key>
+			<string>keyword.basic.ag</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.basic.ag</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.other.ag</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.basic.ag</string>
+				</dict>
+			</dict>
+		</dict>
 		<key>basicKeywords</key>
 		<dict>
 			<key>match</key>
 			<!-- Add both constants for lower case syntax and old style syntax -->
-			<string>\b(module|imports|ext|inh|chn|syn|include|deriving|data|attr|sem|wrapper|use|type|set|self|maybe|DERIVING|DATA|ATTR|SEM|WRAPPER|USE|TYPE|SET|SELF|MAYBE)\b(?=[\s)])</string>
+			<string>\b(imports|ext|inh|chn|syn|around|module|include|deriving|data|attr|sem|wrapper|use|type|set|self|either|intmap|AROUND|MODULE|INCLUDE|DERIVING|DATA|ATTR|SEM|WRAPPER|USE|TYPE|SET|SELF|EITHER|INTMAP)\b(?=[\s)])</string>
 			<key>name</key>
 			<string>keyword.basic.ag</string>
 		</dict>
@@ -242,7 +268,7 @@
 		<key>functions</key>
 		<dict>
 			<key>match</key>
-			<string>([a-z][a-zA-Z0-9_]*'?)(?=[\s),])</string>
+			<string>([a-z][a-zA-Z0-9_]*'?)(?=[\s),\]])</string>
 			<key>name</key>
 			<string>support.function.embedded.haskell.ag</string>
 		</dict>
@@ -263,7 +289,7 @@
 		<key>dataclasses</key>
 		<dict>
 			<key>match</key>
-			<string>([A-Z][a-zA-Z0-9_]*)((\.)([a-z][a-zA-Z0-9_]*))?</string>
+			<string>([A-Z][a-zA-Z0-9_]*[']*)((\.)([a-z][a-zA-Z0-9_]*[']*))?</string>
 			<key>name</key>
 			<string>meta.constant.other.ag</string>
 			<key>captures</key>
@@ -282,237 +308,6 @@
 				<dict>
 					<key>name</key>
 					<string>support.function.haskell.ag</string>
-				</dict>
-			</dict>
-		</dict>
-		<key>oldParaDecl</key>
-		<dict>
-			<key>match</key>
-			<string>(\[)( ([a-z][a-zA-Z0-9_]*) +(:) ([A-Z][a-zA-Z0-9_]*)| ([a-z][a-zA-Z0-9_]*) (USE) \{([A-Z][a-zA-Z0-9_]*)((.)([A-Z][a-zA-Z0-9_]*))*\} \{([A-Z][a-zA-Z0-9_]*)((.)([A-Z][a-zA-Z0-9_]*))*\} +(:) ([A-Z][a-zA-Z0-9_]*))*( \|)( ([a-z][a-zA-Z0-9_]*) +(:) ([A-Z][a-zA-Z0-9_]*)| ([a-z][a-zA-Z0-9_]*) (USE) \{([A-Z][a-zA-Z0-9_]*)((.)([A-Z][a-zA-Z0-9_]*))*\} \{([A-Z][a-zA-Z0-9_]*)((.)([A-Z][a-zA-Z0-9_]*))*\} +(:) ([A-Z][a-zA-Z0-9_]*))*( \|)( ([a-z][a-zA-Z0-9_]*) +(:) ([A-Z][a-zA-Z0-9_]*)| ([a-z][a-zA-Z0-9_]*) (USE) \{([A-Z][a-zA-Z0-9_]*)((.)([A-Z][a-zA-Z0-9_]*))*\} \{([A-Z][a-zA-Z0-9_]*)((.)([A-Z][a-zA-Z0-9_]*))*\} +(:) ([A-Z][a-zA-Z0-9_]*))*( \])</string>
-			<key>name</key>
-			<string>meta.variable.parameter.ag</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.basic.ag</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<!-- green attr name -->
-					<key>name</key>
-					<string>entity.other.attribute-name.ag</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>5</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>6</key>
-				<dict>
-					<key>name</key>
-					<string>entity.other.attribute-name.ag</string>
-				</dict>
-				<key>7</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.basic.ag</string>
-				</dict>
-				<key>8</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>10</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>11</key>
-				<dict>
-					<!-- green attr name -->
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>12</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>14</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>15</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>16</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>17</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>18</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>20</key>
-				<dict>
-					<!-- green attr name -->
-					<key>name</key>
-					<string>entity.other.attribute-name.ag</string>
-				</dict>
-				<key>21</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>22</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>23</key>
-				<dict>
-					<key>name</key>
-					<string>entity.other.attribute-name.ag</string>
-				</dict>
-				<key>24</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.basic.ag</string>
-				</dict>
-				<key>25</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>27</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>28</key>
-				<dict>
-					<!-- green attr name -->
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>29</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>31</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>32</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>33</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>34</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>35</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>37</key>
-				<dict>
-					<!-- green attr name -->
-					<key>name</key>
-					<string>entity.other.attribute-name.ag</string>
-				</dict>
-				<key>38</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>39</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>40</key>
-				<dict>
-					<key>name</key>
-					<string>entity.other.attribute-name.ag</string>
-				</dict>
-				<key>41</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.basic.ag</string>
-				</dict>
-				<key>42</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>44</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>45</key>
-				<dict>
-					<!-- green attr name -->
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>46</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>48</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>49</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>50</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.ag</string>
-				</dict>
-				<key>51</key>
-				<dict>
-					<key>name</key>
-					<string>constant.other.ag</string>
-				</dict>
-				<key>52</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.basic.ag</string>
 				</dict>
 			</dict>
 		</dict>
