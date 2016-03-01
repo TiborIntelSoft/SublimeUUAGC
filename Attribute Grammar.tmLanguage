@@ -268,7 +268,7 @@
 		<key>functions</key>
 		<dict>
 			<key>match</key>
-			<string>([a-z][a-zA-Z0-9_]*'?)(?=[\s),\]])</string>
+			<string>([a-z][a-zA-Z0-9_]*'?)(?=[\s),\]}])</string>
 			<key>name</key>
 			<string>support.function.embedded.haskell.ag</string>
 		</dict>
@@ -282,7 +282,7 @@
 		<key>infixfunctions</key>
 		<dict>
 			<key>match</key>
-			<string>(`[a-z][a-zA-Z0-9_]*'?`)(?=[\s)])</string>
+			<string>(`([A-Z][a-zA-Z0-9_]*.)?[a-z][a-zA-Z0-9_]*'?`)(?=[\s)])</string>
 			<key>name</key>
 			<string>keyword.operator.ag</string>
 		</dict>
