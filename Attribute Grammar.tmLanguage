@@ -193,11 +193,11 @@
           <key>name</key>
           <string>variable.parameter.ag</string>
         </dict>
-        <key>3</key>
-        <dict>
-          <key>name</key>
-          <string>meta.separator.attribute.ag</string>
-        </dict>
+        <!-- <key>3</key> -->
+        <!-- <dict> -->
+          <!-- <key>name</key> -->
+          <!-- <string>meta.separator.attribute.ag</string> -->
+        <!-- </dict> -->
         <key>4</key>
         <dict>
           <key>name</key>
@@ -208,11 +208,11 @@
           <key>name</key>
           <string>variable.parameter.ag</string>
         </dict>
-        <key>6</key>
-        <dict>
-          <key>name</key>
-          <string>meta.separator.attribute.ag</string>
-        </dict>
+        <!-- <key>6</key> -->
+        <!-- <dict> -->
+          <!-- <key>name</key> -->
+          <!-- <string>meta.separator.attribute.ag</string> -->
+        <!-- </dict> -->
         <key>7</key>
         <dict>
           <key>name</key>
@@ -228,11 +228,11 @@
           <key>name</key>
           <string>variable.parameter.ag</string>
         </dict>
-        <key>10</key>
-        <dict>
-          <key>name</key>
-          <string>meta.separator.attribute.ag</string>
-        </dict>
+        <!-- <key>10</key> -->
+        <!-- <dict> -->
+          <!-- <key>name</key> -->
+          <!-- <string>meta.separator.attribute.ag</string> -->
+        <!-- </dict> -->
         <key>11</key>
         <dict>
           <key>name</key>
